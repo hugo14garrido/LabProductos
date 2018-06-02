@@ -19,7 +19,7 @@ public class Producto implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="codigo_producto")
-	private Long codigoUsuario;
+	private Long codigoProducto;
 	@Column(name="nombre")
 	private String nombre;
 	@Column(name="modelo")
@@ -39,64 +39,28 @@ public class Producto implements Serializable{
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Producto(Long codigoUsuario, String nombre, String modelo, Float precio, int garantia) {
+
+
+	public Producto(Long codigoProducto, String nombre, String modelo, Float precio, int garantia) {
 		super();
-		this.codigoUsuario = codigoUsuario;
+		this.codigoProducto = codigoProducto;
 		this.nombre = nombre;
 		this.modelo = modelo;
 		this.precio = precio;
 		this.garantia = garantia;
 	}
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((codigoUsuario == null) ? 0 : codigoUsuario.hashCode());
-		result = prime * result + garantia;
-		result = prime * result + ((modelo == null) ? 0 : modelo.hashCode());
-		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
-		result = prime * result + ((precio == null) ? 0 : precio.hashCode());
-		return result;
+
+
+	public Long getCodigoProducto() {
+		return codigoProducto;
 	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Producto other = (Producto) obj;
-		if (codigoUsuario == null) {
-			if (other.codigoUsuario != null)
-				return false;
-		} else if (!codigoUsuario.equals(other.codigoUsuario))
-			return false;
-		if (garantia != other.garantia)
-			return false;
-		if (modelo == null) {
-			if (other.modelo != null)
-				return false;
-		} else if (!modelo.equals(other.modelo))
-			return false;
-		if (nombre == null) {
-			if (other.nombre != null)
-				return false;
-		} else if (!nombre.equals(other.nombre))
-			return false;
-		if (precio == null) {
-			if (other.precio != null)
-				return false;
-		} else if (!precio.equals(other.precio))
-			return false;
-		return true;
+
+
+	public void setCodigoProducto(Long codigoProducto) {
+		this.codigoProducto = codigoProducto;
 	}
-	public Long getCodigoUsuario() {
-		return codigoUsuario;
-	}
-	public void setCodigoUsuario(Long codigoUsuario) {
-		this.codigoUsuario = codigoUsuario;
-	}
+
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -132,6 +96,54 @@ public class Producto implements Serializable{
 	}
 	public void setTipoInstrumento(TipoInstrumento tipoInstrumento) {
 		this.tipoInstrumento = tipoInstrumento;
+	}
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((codigoProducto == null) ? 0 : codigoProducto.hashCode());
+		result = prime * result + garantia;
+		result = prime * result + ((modelo == null) ? 0 : modelo.hashCode());
+		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
+		result = prime * result + ((precio == null) ? 0 : precio.hashCode());
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Producto other = (Producto) obj;
+		if (codigoProducto == null) {
+			if (other.codigoProducto != null)
+				return false;
+		} else if (!codigoProducto.equals(other.codigoProducto))
+			return false;
+		if (garantia != other.garantia)
+			return false;
+		if (modelo == null) {
+			if (other.modelo != null)
+				return false;
+		} else if (!modelo.equals(other.modelo))
+			return false;
+		if (nombre == null) {
+			if (other.nombre != null)
+				return false;
+		} else if (!nombre.equals(other.nombre))
+			return false;
+		if (precio == null) {
+			if (other.precio != null)
+				return false;
+		} else if (!precio.equals(other.precio))
+			return false;
+		return true;
 	}
 	
 	
